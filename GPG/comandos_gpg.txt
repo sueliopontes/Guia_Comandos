@@ -39,7 +39,10 @@ gpg> save
 //Excluindo a chave
 gpg --delete-secret-key DC3EF8A3DDDF940F
 
+//Excluindo a chave
 gpg --delete-key DC3EF8A3DDDF940F
+
+
 
 
 
