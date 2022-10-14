@@ -1,0 +1,45 @@
+//Lista chaves existentes
+gpg --list-secret-key --keyid-form LONG
+
+//Gerar uma nova chave
+gpg --full-generate-key
+
+//Visualizar a chave
+gpg  --armor --export 9F3DEFF0E54F1422
+
+//Configurar o git para assinar os commit
+git config --global user.signingkey 9F3DEFF0E54F1422
+
+//Comando para exportar a chave
+export GPG_TTY=$(tty)
+
+//Incluir a variável de ambiente 
+vim ~/.bash_profile
+
+//Configurar o git para assinar todos commit
+git config --global commit.gpgsign true
+
+//Configurar git para assinar todas tags
+git config --global tag.gpgSign true
+
+//Visulizar os commit assinados
+git log --show-signature -1
+
+//Ativar o agente do gpg para salva a senha
+vim ~/.gnupg/gpg.config
+gpgconf --launch gpg-agent
+
+//Adicionar novo email
+gpg --edit-key DC3EF8A3DDDF940F
+gpg> adduid
+gpg> uid2
+gpg> trust
+gpg> save
+
+//Excluindo a chave
+gpg --delete-secret-key DC3EF8A3DDDF940F
+
+gpg --delete-key DC3EF8A3DDDF940F
+
+
+
