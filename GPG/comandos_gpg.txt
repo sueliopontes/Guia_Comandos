@@ -32,7 +32,7 @@ gpgconf --launch gpg-agent
 //Adicionar novo email
 gpg --edit-key DC3EF8A3DDDF940F
 gpg> adduid
-gpg> uid2
+gpg> uid 2
 gpg> trust
 gpg> save
 
